@@ -6,6 +6,7 @@ const assert = require('node:assert/strict');
 test('the page starts with a responsive blue Hello World banner', async () => {
   const html = await readFile(join(__dirname, '..', 'index.html'), 'utf8');
   assert.match(html, /<body>\s*<header class="banner">\s*<h1>Hello World<\/h1>/);
+  assert.match(html, /<\/header>\s*<p class="subtitle">Built by Software Factory<\/p>/);
   assert.match(html, /background-color:\s*#0056b3/i);
   assert.match(html, /color:\s*#fff/i);
   assert.match(html, /padding:\s*clamp\(/i);
